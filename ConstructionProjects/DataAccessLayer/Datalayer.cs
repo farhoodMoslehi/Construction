@@ -8,15 +8,15 @@ using System.Configuration;
 
 namespace DataAccessLayer
 {
-    class Datalayer
+    public class DataLayer
     {
-        public string DBConnection()
+        public string DbConnection()
         {
             return ConnectionString();
         }
         private string ConnectionString()
         {
-            ConnectionStringSettings cs = ConfigurationManager.ConnectionStrings["Databasecon"];
+            ConnectionStringSettings cs = ConfigurationManager.ConnectionStrings["databasecon"];
 
             if (cs != null)
             {
@@ -24,7 +24,7 @@ namespace DataAccessLayer
             }
             else
             {
-                string s = ConfigurationManager.ConnectionStrings["Databasecon"].ConnectionString;
+                string s = ConfigurationManager.ConnectionStrings["databasecon"].ConnectionString;
                 return "something else";
             }
         }
